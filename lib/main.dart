@@ -1,17 +1,11 @@
-import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart';
+
 import 'features/authentication/presentation/bloc_provider.dart';
 import 'features/authentication/presentation/pages/onboarding/onboarding_screen2.dart';
 import 'features/authentication/presentation/widgets/exports/exports.dart';
 
 void main() {
   runApp(
-    DevicePreview(
-    enabled: !kReleaseMode,
-    builder: (context) => 
-    
-  ) // Wrap your app
-
+MyApp(),
       );
 }
 
@@ -30,8 +24,6 @@ class MyApp extends StatelessWidget {
           builder: (_, child) {
             return MaterialApp(
                 debugShowCheckedModeBanner: false,
-                locale: DevicePreview.locale(context),
-                builder: DevicePreview.appBuilder,
                 title: 'Flutter Demo',
                 theme: ThemeData(
                   appBarTheme: AppBarTheme(iconTheme: IconThemeData(color: Colors.white))
