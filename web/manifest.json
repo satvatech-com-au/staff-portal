@@ -1,11 +1,11 @@
 {
-    "name": "staffportal",
-    "short_name": "staffportal",
+    "name": "hr_application",
+    "short_name": "hr_application",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "SatvaTech Staff Portal cross platform application",
+    "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

@@ -1,4 +1,4 @@
-package au.com.satvatech.app.staff_portal.staffportal
+package com.example.hr_application
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "au.com.satvatech.app.staff_portal" "\0"
-            VALUE "FileDescription", "staffportal" "\0"
+            VALUE "CompanyName", "com.example" "\0"
+            VALUE "FileDescription", "hr_application" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "staffportal" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2023 au.com.satvatech.app.staff_portal. All rights reserved." "\0"
-            VALUE "OriginalFilename", "staffportal.exe" "\0"
-            VALUE "ProductName", "staffportal" "\0"
+            VALUE "InternalName", "hr_application" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
+            VALUE "OriginalFilename", "hr_application.exe" "\0"
+            VALUE "ProductName", "hr_application" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

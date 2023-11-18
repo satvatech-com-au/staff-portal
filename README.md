@@ -1,6 +1,6 @@
-# staffportal
+# hr_application
 
-SatvaTech Staff Portal cross platform application
+A new Flutter project.
 
 ## Getting Started
 
