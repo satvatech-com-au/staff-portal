@@ -1,9 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:hr_application/features/authentication/presentation/widgets/components/fonts_styles.dart';
 
-class TabCon2 extends StatelessWidget {
+class TabCon2 extends StatefulWidget {
   const TabCon2({super.key});
 
+  @override
+  State<TabCon2> createState() => _TabCon2State();
+}
+
+class _TabCon2State extends State<TabCon2> {
+
+  DateTime _dateTime = DateTime.now();
+
+  void _showDatePicker(){
+     showDatePicker(
+      context: context,
+       initialDate: DateTime.now(),
+        firstDate: DateTime(2000),
+         lastDate: DateTime(2030)
+         ).then((value) {
+          setState(() {
+            _dateTime =value!;
+          });
+         });
+  }
   @override
   Widget build(BuildContext context) {
     return  Container(
@@ -29,10 +49,13 @@ class TabCon2 extends StatelessWidget {
                               decoration: BoxDecoration(
                                 border: Border.all()
                               ),
-                              child: const Row(
+                              child:  Row(
                                 children: [
-                                  Icon(Icons.calendar_month),
-                                  Text('Jun 2021')
+                                 IconButton(
+                                  onPressed:(){
+                                    _showDatePicker();
+                                  }, icon:  Icon(Icons.calendar_month),),
+                                  Text(_dateTime.year.toString())
                                 ],
                               ),
                             )
