@@ -16,13 +16,14 @@ class _AlertState extends State<Alert> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+
         backgroundColor: Colors.blue,
         title: Text(
           "NOTIFICATIONS",
           style: BoldHeaderstextStyle(color: Colors.white),
         ),
         centerTitle: true,
-        automaticallyImplyLeading: false,
+        
         elevation: 0,
       ),
       body: Stack(

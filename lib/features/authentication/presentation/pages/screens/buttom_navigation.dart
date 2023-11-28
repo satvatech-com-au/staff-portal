@@ -1,5 +1,8 @@
 
 
+import 'package:hr_application/features/authentication/presentation/pages/screens/leaves/leaves.dart';
+import 'package:hr_application/features/authentication/presentation/pages/screens/payrol.dart';
+
 import '../../widgets/exports/exports.dart';
 
 class BottomNav extends StatefulWidget {
@@ -13,9 +16,10 @@ class _BottomNavState extends State<BottomNav> {
   int currentindex  = 0;
   List pages=[
    Home(),
-    Calendar(),
-   Alert(),
-   More()
+  Calendar(),
+   Payroll(),
+   Leaves()
+  //  More()
    
   ];
 
@@ -49,8 +53,8 @@ class _BottomNavState extends State<BottomNav> {
                     ),
                 
                 BottomNavigationBarItem(
-                    label: 'Notification',
-                    icon: Icon(Icons.notifications_active)
+                    label: 'Payroll',
+                    icon: Icon(Icons.attach_money)
                 ),
                 BottomNavigationBarItem(
                     label: 'More',

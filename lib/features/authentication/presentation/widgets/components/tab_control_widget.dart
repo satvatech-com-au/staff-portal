@@ -13,12 +13,11 @@ class _TabControlWidgetState extends State<TabControlWidget> {
   @override
   Widget build(BuildContext context) {
     return  DefaultTabController(
-          length: 4,
+          length: 3,
           child: Column(
             children: <Widget>[
               ButtonsTabBar(
                 backgroundColor: Colors.blue,
-                
                 unselectedBackgroundColor: Colors.grey[200],
                 unselectedLabelStyle: TextStyle(color: Colors.black),
                 labelStyle:
@@ -33,11 +32,7 @@ class _TabControlWidgetState extends State<TabControlWidget> {
                   ),
                   Tab(icon: Icon(Icons.reset_tv),
                   text: "Rejected",),
-                  Tab(icon: Icon(Icons.open_with_rounded),
-                 
-                  
-                  text: "Checking",),
-                ],
+                ], 
               ),
              const Expanded(
                 child: TabBarView(
@@ -49,15 +44,7 @@ class _TabControlWidgetState extends State<TabControlWidget> {
                     Center(
                       child: Icon(Icons.directions_bike),
                     ),
-                    Center(
-                      child: Icon(Icons.directions_car),
-                    ),
-                    Center(
-                      child: Icon(Icons.directions_transit),
-                    ),
-                    Center(
-                      child: Icon(Icons.directions_bike),
-                    ),
+                    
                   ],
                 ),
               ),

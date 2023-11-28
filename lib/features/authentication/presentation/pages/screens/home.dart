@@ -7,8 +7,10 @@ import 'package:hr_application/features/authentication/presentation/pages/screen
 import 'package:intl/intl.dart';
 
 import '../../widgets/components/common_widgets.dart';
+import '../../widgets/components/drawerList.dart';
 import '../../widgets/components/drawer_head.dart';
 import '../../widgets/components/fonts_styles.dart';
+import 'notification.dart';
 
 class Home extends StatefulWidget {
   Home({super.key});
@@ -86,7 +88,7 @@ class _HomeState extends State<Home> {
     setState(() {
       // Toggle the tapped state and change the icon color
       isTapped = !isTapped;
-      iconColor = isTapped ? Colors.green : Colors.red ;
+      iconColor = isTapped ? Colors.green : Colors.red  ;
     });
   }
 
@@ -105,6 +107,25 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         backgroundColor: Colors.blue,
         elevation: 0,
+        actions: [
+           CircleAvatar(
+            radius: 20,
+            backgroundImage: AssetImage("images/profile.jpg"),
+          ),
+          Stack(children:[ 
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Alert()));
+              },
+              child: Icon(Icons.notifications,size: 40,)),
+            Positioned(
+              left: 20,
+              child: CircleAvatar(
+                backgroundColor: Colors.red,
+                radius: 8,))
+            ]),
+         
+        ],
       ),
       body: Column(
         children: [
@@ -136,18 +157,6 @@ class _HomeState extends State<Home> {
                               Text("Good Day !",
                                   style: getMedium(color: Colors.white))
                             ]),
-                        GestureDetector(
-                          onTap: () {
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //         builder: (context) => ProfilePage()));
-                          },
-                          child: const CircleAvatar(
-                            radius: 40,
-                            backgroundImage: AssetImage("images/profile.jpg"),
-                          ),
-                        )
                       ],
                     ),
                   )
@@ -198,7 +207,7 @@ class _HomeState extends State<Home> {
           SizedBox(
             height: 30.h,
           ),
-          InkWell(
+          GestureDetector(
             onTap: _handleTap,
             child: Container(
                 width: 150,
@@ -294,158 +303,12 @@ class _HomeState extends State<Home> {
                 }),
           ),
            SizedBox(
-            height: 40.h,
+            height: 20.h,
           ),
-          Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: tap(text: "Apply for leaves", onPress: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>CreateApplicaton()));
-              })),
+          
         ],
       ),
     );
   }
 }
 
-class MyDrawerList extends StatelessWidget {
-  const MyDrawerList({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ListTile(
-          leading: const Icon(
-            Icons.home,
-            color: Colors.blue,
-          ),
-          title: Text(
-            "Home",
-            style: getMedium(),
-          ),
-          onTap: () {
-            Navigator.pop(context);
-          },
-          trailing: const Icon(
-            Icons.arrow_forward_ios,
-            color: Colors.blue,
-          ),
-        ),
-        const Divider(),
-        ListTile(
-          leading: const Icon(
-            Icons.calendar_month,
-            color: Colors.blue,
-          ),
-          title: Text("My Calender", style: getMedium()),
-          onTap: () {
-            Navigator.pop(context);
-          },
-          trailing: const Icon(
-            Icons.arrow_forward_ios,
-            color: Colors.blue,
-          ),
-        ),
-        const Divider(),
-        ListTile(
-          leading: const Icon(
-            Icons.announcement,
-            color: Colors.blue,
-          ),
-          title: Text("Announcement", style: getMedium()),
-          onTap: () {
-            Navigator.pop(context);
-          },
-          trailing: const Icon(
-            Icons.arrow_forward_ios,
-            color: Colors.blue,
-          ),
-        ),
-        const Divider(),
-        ListTile(
-          leading: const Icon(
-            Icons.people,
-            color: Colors.blue,
-          ),
-          title: Text("Team Management", style: getMedium()),
-          onTap: () {
-            Navigator.pop(context);
-          },
-          trailing: const Icon(
-            Icons.arrow_forward_ios,
-            color: Colors.blue,
-          ),
-        ),
-        const Divider(),
-        ListTile(
-          leading: const Icon(
-            Icons.calendar_today,
-            color: Colors.blue,
-          ),
-          title: Text("Members Managements", style: getMedium()),
-          onTap: () {
-            Navigator.pop(context);
-          },
-          trailing: const Icon(
-            Icons.arrow_forward_ios,
-            color: Colors.blue,
-          ),
-        ),
-        const Divider(),
-        ListTile(
-          leading: const Icon(
-            Icons.apps_outlined,
-            color: Colors.blue,
-          ),
-          title: Text("Manage Application", style: getMedium()),
-          onTap: () {
-            Navigator.pop(context);
-          },
-          trailing: const Icon(
-            Icons.arrow_forward_ios,
-            color: Colors.blue,
-          ),
-        ),
-        const Divider(),
-        ListTile(
-          leading: const Icon(
-            Icons.report,
-            color: Colors.blue,
-          ),
-          title: Text("Reporting", style: getMedium()),
-          onTap: () {
-            Navigator.pop(context);
-          },
-          trailing: const Icon(
-            Icons.arrow_forward_ios,
-            color: Colors.blue,
-          ),
-        ),
-        const Divider(),
-        ListTile(
-          leading: const Icon(
-            Icons.question_answer,
-            color: Colors.blue,
-          ),
-          title: Text("About", style: getMedium()),
-          onTap: () {
-            Navigator.pop(context);
-          },
-          trailing: const Icon(
-            Icons.arrow_forward_ios,
-            color: Colors.blue,
-          ),
-        ),
-        const Divider(),
-        ListTile(
-          leading: const Icon(
-            Icons.logout,
-            color: Colors.blue,
-          ),
-          title: Text("Logout", style: getMedium()),
-          onTap: () {},
-        ),
-      ],
-    );
-  }
-}

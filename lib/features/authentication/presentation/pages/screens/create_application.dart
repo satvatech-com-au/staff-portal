@@ -4,9 +4,34 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../widgets/components/common_widgets.dart';
 import '../../widgets/components/fonts_styles.dart';
 
-class CreateApplicaton extends StatelessWidget {
+class CreateApplicaton extends StatefulWidget {
   const CreateApplicaton({super.key});
 
+  @override
+  State<CreateApplicaton> createState() => _CreateApplicatonState();
+}
+
+class _CreateApplicatonState extends State<CreateApplicaton> {
+  List<DropdownMenuItem<String>> _dropdownItems = [
+    DropdownMenuItem(value: '-1', child: Text('Date To :')),
+    DropdownMenuItem(value: '1', child: Text('2001')),
+    DropdownMenuItem(value: '2', child: Text('2002')),
+    DropdownMenuItem(value: '3', child: Text('2003')),
+    DropdownMenuItem(value: '4', child: Text('2004')),
+    DropdownMenuItem(value: '5', child: Text('2005')),
+    DropdownMenuItem(value: '6', child: Text('2006')),
+  ];
+
+  List<DropdownMenuItem<String>> _dateToItems = [
+    DropdownMenuItem(value: '-1', child: Text('Date From :')),
+    DropdownMenuItem(value: '1', child: Text('2001')),
+    DropdownMenuItem(value: '2', child: Text('2002')),
+    DropdownMenuItem(value: '3', child: Text('2003')),
+    DropdownMenuItem(value: '4', child: Text('2004')),
+    DropdownMenuItem(value: '5', child: Text('2005')),
+    DropdownMenuItem(value: '6', child: Text('2006')),
+  ];
+  var _value = '-1';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,36 +100,36 @@ class CreateApplicaton extends StatelessWidget {
                               IntrinsicHeight(
                                 child: Row(
                                   mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Container(
-                                      height: 50,
-                                      width: 150,
-                                      child: textFields(
-                                        hintText: 'Date ',
-                                        //controller: textController.edufrmDateController,
-                                        keyboardType:
-                                            TextInputType.emailAddress,
-                                        obscureText: false,
-                                      ),
-                                    ),
-                                    SizedBox(width: 5,),
-                                    const VerticalDivider(
-                                      thickness: 2,
-                                      color: Colors.grey,
-                                      width: 10,
-                                    ),
-                                    SizedBox(width: 5,),
+                                        height: 45.h,
+                                        width: 170.w,
+                                        decoration: BoxDecoration(
+                                            border: Border.all(),
+                                            borderRadius:
+                                                BorderRadius.circular(15.0)),
+                                        child: DropdownButtonFormField(
+                                            decoration: InputDecoration(
+                                                border: InputBorder.none),
+                                            value: _value,
+                                            items: _dateToItems,
+                                            onChanged: (v) {})),
+                                            SizedBox(width: 10,),
                                     Container(
-                                        height: 50,
-                                        width: 150,
-                                        child: textFields(
-                                          hintText: 'Date To:',
-                                          //controller: textController.eduToDateController,
-                                          keyboardType:
-                                              TextInputType.emailAddress,
-                                          obscureText: false,
-                                        ))
+                                      height: 40.h,
+                                      width: 170.w,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(15.0),
+                                          border: Border.all()),
+                                      child: DropdownButtonFormField(
+                                          decoration: InputDecoration(
+                                              border: InputBorder.none),
+                                          value: _value,
+                                          items: _dropdownItems,
+                                          onChanged: (v) {}),
+                                    ),
                                   ],
                                 ),
                               ),
@@ -257,12 +282,12 @@ class CreateApplicaton extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: 70,
+            left: 50.w,
             child: Row(
               children: [
                 Container(
-                  height: 60,
-                  width: 140,
+                  height: 50.h,
+                  width: 140.w,
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(15.0),
@@ -305,8 +330,8 @@ class CreateApplicaton extends StatelessWidget {
                   width: 10,
                 ),
                 Container(
-                  height: 60,
-                  width: 140,
+                  height: 50.h,
+                  width: 140.w,
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(15.0),

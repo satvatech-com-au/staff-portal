@@ -1,12 +1,29 @@
 
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
+import 'package:hr_application/features/authentication/presentation/pages/screens/attendance.dart';
+import 'package:hr_application/features/authentication/presentation/pages/screens/leaves/leaves.dart';
+import 'package:hr_application/features/authentication/presentation/pages/screens/leaves/requested_leaves.dart';
+import 'package:hr_application/features/authentication/presentation/pages/screens/payrol.dart';
+import 'package:hr_application/features/authentication/presentation/widgets/components/tab_control_pages/pending.dart';
+
+
 import 'features/authentication/presentation/bloc_provider.dart';
 import 'features/authentication/presentation/pages/onboarding/onboarding_screen2.dart';
+import 'features/authentication/presentation/pages/screens/buttom_navigation.dart';
+import 'features/authentication/presentation/pages/screens/create_application.dart';
 import 'features/authentication/presentation/widgets/exports/exports.dart';
 
 void main() {
   runApp(
-MyApp(),
-      );
+    //   DevicePreview(
+    // enabled: !kReleaseMode,
+    //  builder: (context) =>   MyApp(),
+    //   ),
+    MyApp(),
+   );
+   
+ 
 }
 
 class MyApp extends StatelessWidget {
@@ -23,14 +40,26 @@ class MyApp extends StatelessWidget {
           splitScreenMode: true,
           builder: (_, child) {
             return MaterialApp(
-                debugShowCheckedModeBanner: false,
+                debugShowCheckedModeBanner: false, 
                 title: 'Flutter Demo',
-                theme: ThemeData(
-                  appBarTheme: AppBarTheme(iconTheme: IconThemeData(color: Colors.white))
-                ),
+                 useInheritedMediaQuery: true,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
+      theme: ThemeData.light(),
                 darkTheme: ThemeData.dark(),
                 home:
-                   OnboardingScreen2()
+                // MyHomePage()
+              //  Attendance()
+                // Home()
+            
+              // Pending()
+              // More()
+              // Payroll()
+              // RequestedLeave()
+              // Leaves()
+              BottomNav( )
+                  //  CreateApplicaton()
+                  //  OnboardingScreen2()
                 );
           }),
     );
