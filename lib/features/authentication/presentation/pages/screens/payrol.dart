@@ -1,7 +1,5 @@
 
-import 'package:flutter/material.dart';
-import 'package:hr_application/features/authentication/presentation/widgets/components/fonts_styles.dart';
-import 'package:hr_application/features/authentication/presentation/widgets/exports/exports.dart';
+import '../../widgets/exports/exports.dart';
 
 class Payroll extends StatelessWidget {
   const Payroll({super.key});

@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hr_application/features/authentication/presentation/widgets/components/fonts_styles.dart';
+
+import '../exports/exports.dart';
 
 class DrawerHead extends StatelessWidget {
   const DrawerHead({super.key});
@@ -10,7 +9,7 @@ class DrawerHead extends StatelessWidget {
     return Container(
       height: 200.h,
       width: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.blue,
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(70.0)
@@ -18,16 +17,16 @@ class DrawerHead extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 30),
+          const Padding(
+            padding: EdgeInsets.only(top: 40),
             child: CircleAvatar(
               radius: 35,
               backgroundImage: AssetImage("images/profile.jpg"),
             ),
           ),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
           Text("NANA ADDO",style: BoldHeaderstextStyle(color: Colors.white),),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
           Text("Softwear Expect",style: RegularHeaderStyle(),)
         ],
       ),

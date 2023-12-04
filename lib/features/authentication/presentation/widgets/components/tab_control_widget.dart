@@ -1,6 +1,7 @@
-import 'package:buttons_tabbar/buttons_tabbar.dart';
-import 'package:flutter/material.dart';
-import 'package:hr_application/features/authentication/presentation/widgets/components/tab_control_pages/pending.dart';
+
+
+import '../exports/exports.dart';
+import 'tab_control_pages/pending.dart';
 
 class TabControlWidget extends StatefulWidget {
   const TabControlWidget({super.key});

@@ -1,16 +1,9 @@
-import 'dart:async';
+// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
 
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hr_application/features/authentication/presentation/pages/screens/attendance.dart';
-import 'package:hr_application/features/authentication/presentation/pages/screens/create_application.dart';
 import 'package:intl/intl.dart';
+import '../../widgets/exports/exports.dart';
+import 'attendance.dart';
 
-import '../../widgets/components/common_widgets.dart';
-import '../../widgets/components/drawerList.dart';
-import '../../widgets/components/drawer_head.dart';
-import '../../widgets/components/fonts_styles.dart';
-import 'notification.dart';
 
 class Home extends StatefulWidget {
   Home({super.key});
@@ -33,25 +26,25 @@ class _HomeState extends State<Home> {
       'icon': Icons.history,
       'text': 'Attendance',
       'title': 'History',
-      'screen': Attendance()
+      'screen': const Attendance()
     },
     {
       'icon': Icons.leak_remove,
       'text': 'Leaves',
       'title': '',
-      'screen': Attendance()
+      'screen':  const Leaves()
     },
     {
       'icon': Icons.hourglass_bottom_outlined,
       'text': 'Total',
       'title': '',
-      'screen': Attendance()
+      'screen': const Attendance()
     },
     {
       'icon': Icons.payments,
       'text': 'YTD',
       'title': 'Payroll',
-      'screen': Attendance()
+      'screen': const Payroll()
     },
   ];
   bool isIconVisible = true;
@@ -67,7 +60,7 @@ class _HomeState extends State<Home> {
     currentDateTime = DateTime.now();
 
     // Create a timer to update the date and time every second.
-    timer = Timer.periodic(Duration(seconds: 1), (Timer t) {
+    timer = Timer.periodic(const Duration(seconds: 1), (Timer t) {
       setState(() {
         currentDateTime = DateTime.now();
       });
@@ -98,8 +91,8 @@ class _HomeState extends State<Home> {
       drawer: Drawer(
         child: SingleChildScrollView(
           child: Container(
-            child: const Column(
-              children: [DrawerHead(), MyDrawerList()],
+            child:  Column(
+              children: const [DrawerHead(), MyDrawerList()],
             ),
           ),
         ),
@@ -108,17 +101,17 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.blue,
         elevation: 0,
         actions: [
-           CircleAvatar(
+           const CircleAvatar(
             radius: 20,
             backgroundImage: AssetImage("images/profile.jpg"),
           ),
           Stack(children:[ 
             GestureDetector(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>Alert()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const Alert()));
               },
-              child: Icon(Icons.notifications,size: 40,)),
-            Positioned(
+              child: const Icon(Icons.notifications,size: 40,)),
+            const Positioned(
               left: 20,
               child: CircleAvatar(
                 backgroundColor: Colors.red,
@@ -187,7 +180,7 @@ class _HomeState extends State<Home> {
                 ),
                 Column(
                   children: [
-                    InkWell(
+                    GestureDetector(
                       onTap: () =>
                           setState(() => isIconVisible = !isIconVisible),
                       child: Icon(
@@ -198,7 +191,7 @@ class _HomeState extends State<Home> {
                         color: Colors.blue,
                       ),
                     ),
-                    Text("Remote Work")
+                    const Text("Remote Work")
                   ],
                 ),
               ],
@@ -238,7 +231,7 @@ class _HomeState extends State<Home> {
                   ],
                 )),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           SizedBox(
@@ -259,9 +252,10 @@ class _HomeState extends State<Home> {
                   return Container(
                     height: 80.h,
                     width: 100.w,
-                    child: Column(
+                    // ignore: sort_child_properties_last
+                    child:  Column(
                       children: [
-                        GestureDetector(
+                      GestureDetector(
                           onTap: () {
                             final screenToNavigate = item['screen'] as Widget;
                             Navigator.push(

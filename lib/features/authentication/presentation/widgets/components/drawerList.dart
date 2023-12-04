@@ -1,5 +1,5 @@
+
 import '../exports/exports.dart';
-import 'fonts_styles.dart';
 
 class MyDrawerList extends StatelessWidget {
   const MyDrawerList({super.key});
@@ -18,7 +18,7 @@ class MyDrawerList extends StatelessWidget {
             style: getMedium(),
           ),
           onTap: () {
-            Navigator.pop(context);
+            Navigator.push(context, MaterialPageRoute(builder: ((context) => Home())));
           },
           trailing: const Icon(
             Icons.arrow_forward_ios,
@@ -33,7 +33,7 @@ class MyDrawerList extends StatelessWidget {
           ),
           title: Text("My Calender", style: getMedium()),
           onTap: () {
-            Navigator.pop(context);
+            Navigator.push(context, MaterialPageRoute(builder: ((context) => Calendar())));
           },
           trailing: const Icon(
             Icons.arrow_forward_ios,
@@ -48,7 +48,7 @@ class MyDrawerList extends StatelessWidget {
           ),
           title: Text("Notifications", style: getMedium()),
           onTap: () {
-            Navigator.pop(context);
+            Navigator.push(context, MaterialPageRoute(builder: ((context) => Alert())));
           },
           trailing: const Icon(
             Icons.arrow_forward_ios,
@@ -63,7 +63,7 @@ class MyDrawerList extends StatelessWidget {
           ),
           title: Text("About", style: getMedium()),
           onTap: () {
-            Navigator.pop(context);
+            Navigator.push(context, MaterialPageRoute(builder: ((context) => AboutApp())));
           },
           trailing: const Icon(
             Icons.arrow_forward_ios,
@@ -77,7 +77,9 @@ class MyDrawerList extends StatelessWidget {
             color: Colors.blue,
           ),
           title: Text("Payroll", style: getMedium()),
-          onTap: () {},
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: ((context) => Payroll())));
+          },
           trailing: const Icon(
             Icons.arrow_forward_ios,
             color: Colors.blue,
@@ -89,7 +91,9 @@ class MyDrawerList extends StatelessWidget {
             color: Colors.blue,
           ),
           title: Text("Logout", style: getMedium()),
-          onTap: () {},
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: ((context) => AdminLoginScreen())));
+          },
         ),
       ],
     );

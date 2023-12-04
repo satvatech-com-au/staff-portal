@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../widgets/components/common_widgets.dart';
-import '../../widgets/components/fonts_styles.dart';
+import '../../widgets/exports/exports.dart';
 
 class CreateApplicaton extends StatefulWidget {
   const CreateApplicaton({super.key});
@@ -94,7 +91,7 @@ class _CreateApplicatonState extends State<CreateApplicaton> {
                                   offset: const Offset(4, 4)),
                             ]),
                         child: Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding:const EdgeInsets.all(8.0),
                           child: Row(
                             children: [
                               IntrinsicHeight(

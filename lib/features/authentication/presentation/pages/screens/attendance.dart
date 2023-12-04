@@ -1,7 +1,5 @@
-import 'package:anim_search_bar/anim_search_bar.dart';
-import 'package:flutter/material.dart';
-import 'package:hr_application/features/authentication/presentation/widgets/components/fonts_styles.dart';
-import 'package:hr_application/features/authentication/presentation/widgets/exports/exports.dart';
+
+import '../../widgets/exports/exports.dart';
 
 class Attendance extends StatefulWidget {
   const Attendance({super.key});

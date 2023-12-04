@@ -1,25 +1,32 @@
 
 import 'package:device_preview/device_preview.dart';
-
 import 'features/authentication/presentation/bloc_provider.dart';
-import 'features/authentication/presentation/pages/screens/buttom_navigation.dart';
+
 import 'features/authentication/presentation/widgets/exports/exports.dart';
 
 
-void main() {
+Future< void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  final prefs = await SharedPreferences.getInstance();
+  final showHome = prefs.getBool('showHome') ?? false;
   runApp(
-    //   DevicePreview(
-    // enabled: !kReleaseMode,
-    //  builder: (context) =>   MyApp(),
-    //   ),
-    MyApp(),
+      DevicePreview(
+    enabled: !kReleaseMode,
+     builder: (context) =>   MyApp(showHome: showHome),
+      ),
+    // MyApp(),
    );
    
  
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final bool? showHome;
+
+ const MyApp({
+    Key? key,
+    this.showHome,
+  }) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -39,7 +46,8 @@ class MyApp extends StatelessWidget {
       builder: DevicePreview.appBuilder,
       theme: ThemeData.light(),
                 darkTheme: ThemeData.dark(),
-                home:
+                home: 
+                // showHome! ? const AdminLoginScreen() : const OnboardingScreen2(),
                 // MyHomePage()
               //  Attendance()
                 // Home()
@@ -49,7 +57,8 @@ class MyApp extends StatelessWidget {
               // Payroll()
               // RequestedLeave()
               // Leaves()
-              BottomNav( )
+              BottomNav()
+              // Alert()
                   //  CreateApplicaton()
                   //  OnboardingScreen2()
                 );

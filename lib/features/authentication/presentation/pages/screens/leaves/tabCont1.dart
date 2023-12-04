@@ -1,11 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:hr_application/features/authentication/presentation/widgets/components/fonts_styles.dart';
-import 'package:hr_application/features/authentication/presentation/widgets/exports/exports.dart';
 
+import '../../../widgets/components/flutter_toast.dart';
+import '../../../widgets/exports/exports.dart';
 import 'requested_leaves.dart';
 
 class TabCon extends StatefulWidget {
-  TabCon({super.key});
+  const TabCon({super.key});
 
   @override
   State<TabCon> createState() => _TabConState();
@@ -136,7 +135,7 @@ class _TabConState extends State<TabCon> {
                ),
                 ),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             const Padding(
               padding: EdgeInsets.only(left: 10),
               child: TextField(
@@ -150,10 +149,11 @@ class _TabConState extends State<TabCon> {
                ),
                 ),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Center(child: ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>RequestedLeave()));
-            }, child: Text('Request')))
+              toastInfo(msg: 'request sucessfull');
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const RequestedLeave()));
+            }, child: const Text('Request')))
           ],
         ),
       )),

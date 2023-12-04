@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../widgets/components/fonts_styles.dart';
+import '../../widgets/exports/exports.dart';
 
 class AboutApp extends StatelessWidget {
   const AboutApp({super.key});

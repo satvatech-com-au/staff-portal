@@ -1,9 +1,5 @@
-import 'package:hr_application/features/authentication/presentation/pages/screens/buttom_navigation.dart';
-import 'package:hr_application/features/authentication/presentation/widgets/components/common_widgets.dart';
-import 'package:hr_application/features/authentication/presentation/widgets/components/fonts_styles.dart';
 
 import '../../../widgets/exports/exports.dart';
-import 'login_Controller.dart';
 
 class AdminLoginScreen extends StatefulWidget {
   const AdminLoginScreen({Key? key}) : super(key: key);
@@ -72,17 +68,17 @@ class _LogInState extends State<AdminLoginScreen> {
                     TextFormField(
                       decoration: InputDecoration(
                         labelText: 'Name',
-                        prefixIcon: Icon(Icons.email),
+                        prefixIcon: const Icon(Icons.email),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.blue, width: 1.5),
+                          borderSide: const BorderSide(color: Colors.blue, width: 1.5),
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.green, width: 2.0),
+                          borderSide: const BorderSide(color: Colors.green, width: 2.0),
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         errorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.red, width: 2.0),
+                          borderSide: const BorderSide(color: Colors.red, width: 2.0),
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                       ),
@@ -95,23 +91,23 @@ class _LogInState extends State<AdminLoginScreen> {
                       return null;
                     },
                     ),
-                    SizedBox(height: 20,),
+                    const SizedBox(height: 20,),
                     TextFormField(
                       obscureText:
                           true, 
                       decoration: InputDecoration(
                           labelText: 'Password',
-                          prefixIcon: Icon(Icons.password),
+                          prefixIcon: const Icon(Icons.password),
                            enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.blue, width: 1.5),
+                          borderSide: const BorderSide(color: Colors.blue, width: 1.5),
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.green, width: 2.0),
+                          borderSide: const BorderSide(color: Colors.green, width: 2.0),
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         errorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.red, width: 2.0),
+                          borderSide: const BorderSide(color: Colors.red, width: 2.0),
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                           ),
@@ -136,14 +132,14 @@ class _LogInState extends State<AdminLoginScreen> {
                     
                    ElevatedButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>BottomNav()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>const BottomNav()));
                         if (_formKey.currentState!.validate()) {
                           //Navigator.push(context, MaterialPageRoute(builder: (context)=>SignInPage()));
                         }else{
                           return null;
                         }
                       },
-                      child: Text('Sign In'),
+                      child: const Text('Sign In'),
                     ),
                   ],
                 ),

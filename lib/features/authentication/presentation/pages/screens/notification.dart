@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:hr_application/features/authentication/presentation/widgets/components/fonts_styles.dart';
+import '../../widgets/exports/exports.dart';
 
 class Alert extends StatefulWidget {
   const Alert({super.key});
@@ -16,31 +15,21 @@ class _AlertState extends State<Alert> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-
         backgroundColor: Colors.blue,
         title: Text(
           "NOTIFICATIONS",
           style: BoldHeaderstextStyle(color: Colors.white),
         ),
         centerTitle: true,
-        
         elevation: 0,
       ),
-      body: Stack(
-        children: <Widget>[
-          Positioned(
-            top: 200,
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20.0),
-                      topRight: Radius.circular(20.0))),
-            ),
-          ),
-          ListView.separated(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height,
+          child: ListView.separated(
+            scrollDirection: Axis.vertical,
+            shrinkWrap: false,
             separatorBuilder: (context, index) => SizedBox(
               height: 3.h,
             ),
@@ -52,7 +41,7 @@ class _AlertState extends State<Alert> {
                                   const SlidableAction(
                                     onPressed: null,
                                     backgroundColor: Color(0xFFFE4A49),
-                                    foregroundColor: Colors.white,
+                                    foregroundColor: Color.fromARGB(255, 22, 13, 13),
                                     icon: Icons.delete,
                                     label: 'Delete',
                                   ),
@@ -71,7 +60,7 @@ class _AlertState extends State<Alert> {
               ),
             ),
           ),
-        ],
+        ),
       ),
     );
   }

@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hr_application/features/authentication/presentation/widgets/components/fonts_styles.dart';
-import 'package:hr_application/features/authentication/presentation/widgets/components/tab_control_pages/pending.dart';
-import 'package:hr_application/features/authentication/presentation/widgets/components/tab_control_widget.dart';
+
+import '../../widgets/exports/exports.dart';
 
 class More extends StatefulWidget {
   const More({super.key});

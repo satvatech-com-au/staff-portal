@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hr_application/features/authentication/presentation/pages/screens/leaves/tabCon2.dart';
-
 import 'tabCont1.dart';
 
 class Leaves extends StatefulWidget {
@@ -18,9 +17,9 @@ class _LeavesState extends State<Leaves> {
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text('Leaves'),
+          title: const Text('Leaves'),
           elevation: 0,
-          bottom: TabBar(
+          bottom: const TabBar(
               labelColor: Colors.white,
               tabs: [
               Tab(text: "Apply",),
@@ -28,7 +27,7 @@ class _LeavesState extends State<Leaves> {
               
             ]),
         ),
-        body: TabBarView(children: [
+        body: const TabBarView(children: [
           TabCon(),
          TabCon2()
         ]),

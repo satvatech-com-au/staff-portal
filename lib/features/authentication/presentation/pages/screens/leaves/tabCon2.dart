@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:hr_application/features/authentication/presentation/widgets/components/fonts_styles.dart';
+
+import '../../../widgets/exports/exports.dart';
 
 class TabCon2 extends StatefulWidget {
   const TabCon2({super.key});
@@ -54,7 +54,7 @@ class _TabCon2State extends State<TabCon2> {
                                  IconButton(
                                   onPressed:(){
                                     _showDatePicker();
-                                  }, icon:  Icon(Icons.calendar_month),),
+                                  }, icon:  const Icon(Icons.calendar_month),),
                                   Text(_dateTime.year.toString())
                                 ],
                               ),
@@ -99,7 +99,7 @@ class _TabCon2State extends State<TabCon2> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20,),
+                const  SizedBox(height: 20,),
                   Center(child: ElevatedButton(onPressed: (){}, child: const Text('Download Records')))
                 ],
               ),

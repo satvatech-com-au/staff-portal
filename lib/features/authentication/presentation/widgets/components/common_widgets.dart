@@ -1,5 +1,5 @@
 import '../exports/exports.dart';
-import 'fonts_styles.dart';
+
 
 textFields(
     {controller,
@@ -45,7 +45,7 @@ class CustomTextFeild extends StatelessWidget {
     return TextFormField(
       controller: controller,
       validator: (value) {
-        
+        return null;
       },
       keyboardType: keyboardType,
       decoration: InputDecoration(

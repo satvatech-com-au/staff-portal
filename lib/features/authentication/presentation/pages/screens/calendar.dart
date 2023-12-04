@@ -1,9 +1,5 @@
 
-
-
-import '../../widgets/components/calenda_event.dart';
 import '../../widgets/exports/exports.dart';
-import 'package:table_calendar/table_calendar.dart';
 
 class Calendar extends StatefulWidget {
   @override
@@ -38,7 +34,7 @@ class _CalendarState extends State<Calendar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+      
         title: const Text(" Calendar"),
         centerTitle: true,
       ),

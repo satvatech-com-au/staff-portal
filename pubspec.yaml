@@ -51,7 +51,9 @@ dependencies:
   #animation
   lottie: ^2.7.0
   device_preview: ^1.1.0
-  anim_search_bar: ^2.0.3
+  shared_preferences: ^2.2.2
+  flutter_downloader: ^1.11.5
+  path_provider: ^2.1.1
 
  
 

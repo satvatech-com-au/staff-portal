@@ -1,8 +1,4 @@
 
-
-import 'package:hr_application/features/authentication/presentation/pages/screens/leaves/leaves.dart';
-import 'package:hr_application/features/authentication/presentation/pages/screens/payrol.dart';
-
 import '../../widgets/exports/exports.dart';
 
 class BottomNav extends StatefulWidget {
