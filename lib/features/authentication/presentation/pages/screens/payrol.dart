@@ -81,7 +81,6 @@ class payrolCard extends StatelessWidget {
            SizedBox(
             height: 5,
           ),
-           Text("Business Trip",style: TextStyle(color: Colors.blue),),
         ],
       ),
       trailing:const Column(

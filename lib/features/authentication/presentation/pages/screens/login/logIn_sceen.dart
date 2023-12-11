@@ -1,5 +1,7 @@
 
 import '../../../widgets/exports/exports.dart';
+import '../navigation_bar.dart';
+
 
 class AdminLoginScreen extends StatefulWidget {
   const AdminLoginScreen({Key? key}) : super(key: key);
@@ -132,7 +134,7 @@ class _LogInState extends State<AdminLoginScreen> {
                     
                    ElevatedButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>const BottomNav()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> BottomNavBar()));
                         if (_formKey.currentState!.validate()) {
                           //Navigator.push(context, MaterialPageRoute(builder: (context)=>SignInPage()));
                         }else{

@@ -1,4 +1,3 @@
-// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
 
 import 'package:intl/intl.dart';
 import '../../widgets/exports/exports.dart';
@@ -101,10 +100,15 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.blue,
         elevation: 0,
         actions: [
-           const CircleAvatar(
-            radius: 20,
-            backgroundImage: AssetImage("images/profile.jpg"),
-          ),
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfilePage()));
+              },
+              child: CircleAvatar(
+              radius: 20,
+              backgroundImage: AssetImage("images/profile.jpg"),
+                      ),
+            ),
           Stack(children:[ 
             GestureDetector(
               onTap: (){

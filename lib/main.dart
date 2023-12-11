@@ -1,7 +1,8 @@
 
 import 'package:device_preview/device_preview.dart';
+import 'package:hr_application/features/authentication/presentation/pages/screens/dashboard.dart';
+import 'package:hr_application/features/authentication/presentation/pages/screens/navigation_bar.dart';
 import 'features/authentication/presentation/bloc_provider.dart';
-
 import 'features/authentication/presentation/widgets/exports/exports.dart';
 
 
@@ -10,11 +11,11 @@ Future< void> main() async{
   final prefs = await SharedPreferences.getInstance();
   final showHome = prefs.getBool('showHome') ?? false;
   runApp(
-      DevicePreview(
-    enabled: !kReleaseMode,
-     builder: (context) =>   MyApp(showHome: showHome),
-      ),
-    // MyApp(),
+    //   DevicePreview(
+    // enabled: !kReleaseMode,
+    //  builder: (context) =>   MyApp(showHome: showHome),
+    //   ),
+    MyApp(),
    );
    
  
@@ -47,17 +48,21 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.light(),
                 darkTheme: ThemeData.dark(),
                 home: 
+                // ProfilePage()
                 // showHome! ? const AdminLoginScreen() : const OnboardingScreen2(),
                 // MyHomePage()
               //  Attendance()
-                // Home()
-            
+                // Home() 
+                // Dashboard()
+            BottomNavBar()
+            // ProfilePage()
               // Pending()
               // More()
               // Payroll()
               // RequestedLeave()
               // Leaves()
-              BottomNav()
+              
+              // BottomNav()
               // Alert()
                   //  CreateApplicaton()
                   //  OnboardingScreen2()

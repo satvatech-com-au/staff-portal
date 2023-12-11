@@ -7,7 +7,7 @@ class DrawerHead extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200.h,
+      height: 200,
       width: double.infinity,
       decoration: const BoxDecoration(
         color: Colors.blue,
@@ -17,17 +17,29 @@ class DrawerHead extends StatelessWidget {
       ),
       child: Column(
         children: [
-          const Padding(
-            padding: EdgeInsets.only(top: 40),
-            child: CircleAvatar(
-              radius: 35,
-              backgroundImage: AssetImage("images/profile.jpg"),
+          Padding(
+            padding: const EdgeInsets.only(top: 40),
+            child: GestureDetector(
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>const ProfilePage()),),
+              child: const CircleAvatar(
+                radius: 35,
+                backgroundImage: AssetImage("images/profile.jpg"),
+              ),
             ),
           ),
           const SizedBox(height: 10,),
           Text("NANA ADDO",style: BoldHeaderstextStyle(color: Colors.white),),
           const SizedBox(height: 10,),
-          Text("Softwear Expect",style: RegularHeaderStyle(),)
+          Text("Softwear Expect",style: RegularHeaderStyle(),),
+          const SizedBox(height: 5,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Staff ID',style: getRegularSmall(color: Colors.white),),
+              const SizedBox(width: 5,),
+              Text('1223333',style: getRegularSmall(color: Colors.white),)
+            ],
+          )
         ],
       ),
     );

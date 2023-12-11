@@ -22,10 +22,10 @@ export 'package:hr_application/features/authentication/presentation/pages/screen
 export  'package:hr_application/features/authentication/presentation/pages/screens/payrol.dart';
 export 'package:hr_application/features/authentication/presentation/pages/screens/about_app.dart';
 export  'package:hr_application/features/authentication/presentation/pages/screens/login/logIn_sceen.dart';
-export  'package:hr_application/features/authentication/presentation/pages/screens/buttom_navigation.dart';
 export '../../widgets/components/drawerList.dart';
 export '../../widgets/components/drawer_head.dart';
-
+export  '../../pages/screens/profilePage.dart';
+export  'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 
 
